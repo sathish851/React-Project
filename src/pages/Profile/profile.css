@@ -1,0 +1,124 @@
+.profile{
+    height: 86vh;
+    width: 100%;
+    background: #15181D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_content{
+    width: 980px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 120px;
+}
+
+.profile_details{
+    width: 520px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 66px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.profile_details_content{
+    width: 520px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 13px;
+}
+
+.profile_username{
+    
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+
+        color: #FFFFFF;
+
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+}
+
+.line{
+    width: 514px;
+    height: 0px;
+    border: 5px solid #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.profile_user_bio{
+    font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: #FFFFFF;
+
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+}
+
+.socialMedia_container{
+    width: 141px;
+    height: 56px;
+
+
+    /* Inside auto layout */
+    display: flex;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    gap: 30px;
+}
+.socialMedia_instagram{
+    width: 56px;
+    height: 56px;
+
+    background: #D9D9D9;
+    border-radius: 15px;
+}
+
+.socialMedia_linkedin{
+    width: 56px;
+    height: 56px;
+    background: #D9D9D9;
+    border-radius: 15px;
+}
+
+.profile_image{
+    width: 340px;
+    height: 340px;
+    border-radius: 32px;
+    background-color: aqua;
+}
+img{
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+}
