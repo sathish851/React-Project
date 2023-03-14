@@ -1,7 +1,11 @@
 import './NavigationBar.css'
 
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../Store/slice';
 const NavigatinBar = ({children}) =>{
+
+    const dispatch = useDispatch();
     const menuItem=[
         {
             path:"/user/profile",
@@ -44,10 +48,11 @@ const NavigatinBar = ({children}) =>{
 
             <div className='logo_nav'>
                 <div>
+                    <button onClick={()=>dispatch(logout)}>logout</button>
                     <select>
                         <option selected hidden></option>
-                        <option>Edit</option>
-                        <option>Logout</option>
+                        <option >Edit</option>
+                        <option >Logout</option>
                     </select>
                 </div>
                 <div className='logo_nav_img'>

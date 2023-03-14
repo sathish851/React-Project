@@ -1,29 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css"
 import { motion } from "framer-motion";
 import Axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../Store/slice";
 
 const Login = () =>{
-
+    
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
-    const navigate = useNavigate();
+    
     const isLoggedIn = useSelector((state) =>state.auth.isLoggedIn);
-        
-    console.log(isLoggedIn);
-
-    const [loginState, setLoginState] = useState('');
+    
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    
+    const User = useSelector((state) => state.auth.user_id);
+                
+    const [loginState, setLoginState] = useState([]);
 
     function handleLogin(){    
         Axios.post("http://localhost:3050/api/user/login",{
             username:username,
             password:password,
         }).then((response) => {
-            setLoginState(response.data);
+            setLoginState(response.data[0].message);
+            console.log(loginState)
             if(loginState == "success"){
-                navigate('/register');
+                dispatch(login());
+                dispatch(login(response.data[0].user_id));
+                navigate('/user/profile');
             }
         })
     }
