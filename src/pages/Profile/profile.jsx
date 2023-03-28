@@ -15,7 +15,7 @@ const Profile = () =>{
     const [instaLink,SetinstaLink] = useState('');
     const [linkedLink,SetlinkedLink] = useState('');
     const [loading,setloading] =  useState(true);
-
+    const navigate = useNavigate();
     /*if(loggedIn){
         
     console.log(loggedIn);
@@ -31,14 +31,14 @@ const Profile = () =>{
     
         if(user_id > 0){
             Axios.post("http://localhost:3050/api/user/profile",{
-        user_id:user_id,
-        }).then((response) => {
-            console.log(response.data[0])
-            Setusername(response.data[0].username)
-            SetuserBio(response.data[0].bio)
-            SetinstaLink(response.data[0].insta_link)
-            SetlinkedLink(response.data[0].linkedin)
-        })    
+            user_id:user_id,
+            }).then((response) => {
+                console.log(response.data[0])
+                Setusername(response.data[0].username)
+                SetuserBio(response.data[0].bio)
+                SetinstaLink(response.data[0].insta_link)
+                SetlinkedLink(response.data[0].linkedin)
+            })    
         }
         setloading(false)
     }
@@ -83,9 +83,7 @@ const Profile = () =>{
                 </div>
             )
         }else{
-            return(
-                <div>login</div>
-            )
+            navigate("/login");
         }
 }
 

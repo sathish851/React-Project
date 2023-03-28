@@ -1,0 +1,144 @@
+.createtask-body{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #15181D;          
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.createtask-box{
+    width: 1020px;
+    height: 600px;
+
+    background: #1E2126;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    
+}
+
+.createtask-header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #863BC0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px 50px 0px 0px;
+}
+
+.createtask-options{
+    width: 100%;
+    height: 125px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+.createtask-flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.createtask-text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+
+    color: rgba(255, 255, 255, 0.9);
+
+}
+.createtask-select{
+    width: 380px;
+    height: 53px;
+    margin:10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50px;
+    padding: 10px;font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #FFFFFF;
+}
+.createtask-select:focus{
+    border-radius: 20px;
+}
+
+.createtask-option{
+    background: #863BC0;
+    color: #FFFFFF;
+}
+
+.flex-column-task{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 60px;
+    justify-content: space-evenly;
+}
+
+.createtask-content-about{
+    width: 900px;
+    height: 172px;
+    font-size: x-large;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 40px;
+    color: white;
+    border: transparent;
+    padding: 20px;
+    resize: none;
+    margin-left: 5px;
+}
+
+
+.createtask-buttons{
+    padding-top: 8px;
+    gap: 20px;
+    display: flex;
+    padding-right: 50px;
+    justify-content: flex-end ;
+    flex-direction: row;
+}
+
+.createtask-button-text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+}
+.createtask-button-cancel{
+    width: 151px;
+    height: 40px;
+    background: #863BC0;
+    border-radius: 50px;
+    border: transparent;
+    
+}
+.createtask-button-create{
+    width: 151px;
+    height: 40px;
+    background: #863BC0;
+    border-radius: 50px;
+    border: transparent;
+}

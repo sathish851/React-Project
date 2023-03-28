@@ -3,41 +3,32 @@ import {React,useState} from 'react';
 import Axios from 'axios';
 import {motion} from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
+import { getDefaultMiddleware } from '@reduxjs/toolkit';
 const Register = ()=>{
-
+    
     const [regState,setregState] = useState('');
     const navigate = useNavigate();
-    const [data,setData] = useState({
-        username:'',
-        password:"",
-        Role:"",
-        DOB:"",
-        Email:"",
-    });
-
-    const {username,password,Role,DOB,Email} = data;
-
-    const changeHandler = e =>{
-        setData({
-            ...data,
-            [e.target.name]:[e.target.value]
-        });
-    }
-
+    const [username,Setusername] = useState("");
+    const [password,Setpassword] = useState("");
+    const [Role,SetRole] = useState("");
+    const [DOB,SetDOB] = useState("");
+    const [Email,SetEmail] = useState("");
+    const customizedMiddleware = getDefaultMiddleware({
+        serializableCheck: false
+    })
     function validateEmail(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$   /;
-        return re.test(String(email).toLowerCase());
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email.toLowerCase());
     }
 
     const register = ()=>{
         
         Axios.post("http://localhost:3050/api/user",{
-            username: String(data.username),
-            password:String(data.password),
-            role:String(data.Role),
-            date_of_birth: data.DOB,
-            email:String(data.Email)
+            username: username,
+            password:password,
+            role:Role,
+            date_of_birth: DOB,
+            email:Email
         }).then((response)=>{
             console.log(response)
             setregState(response.data);
@@ -46,8 +37,10 @@ const Register = ()=>{
     }
 
     function Logindone(){
-        var email = data.Email;
+        var email = Email;
+        
         if (validateEmail(email)) {
+            
             register();
         } else {
             setregState("Email is not valid");
@@ -62,7 +55,7 @@ const Register = ()=>{
         transition={{ duration: 0.5 }}
         >
 
-        <body>
+        <div className="register-body">
 
         <div id="back_register">
 
@@ -89,13 +82,13 @@ const Register = ()=>{
                             <div id="flex_col">
                                 <p>Username</p>
                                 <div id="input_box">
-                                    <input name="username" value={username} onChange={changeHandler} type="text" id="username" placeholder="Username" required />
+                                    <input name="username" value={username} onChange={(e)=>{Setusername(e.target.value)}} type="text" id="username" placeholder="Username" required />
                                 </div>
                             </div>
                             <div id="flex_col">
                                 <p>Password</p>
                                 <div id="input_box">
-                                    <input name="password" value={password} onChange={changeHandler} type="password" id="pass" placeholder="Password" required/>
+                                    <input name="password" value={password} onChange={(e)=>{Setpassword(e.target.value)}} type="password" id="pass" placeholder="Password" required />
                                 </div>
                             </div>
                         </div>
@@ -103,13 +96,13 @@ const Register = ()=>{
                             <div id="flex_col">
                                 <p>Role</p>
                                 <div id="input_box">
-                                    <input name="Role" value={Role} onChange={changeHandler} type="text" id="username" placeholder="Role" required/>
+                                    <input name="Role" value={Role} onChange={(e)=>{SetRole(e.target.value)}} type="text" id="username" placeholder="Role" required />
                                 </div>
                             </div>
                             <div id="flex_col">
                                 <p>Date of Birth</p>
                                 <div id="input_box">
-                                    <input name="DOB" value={DOB} onChange={changeHandler} type="date" id="pass" placeholder="Date of Birth" required/>
+                                    <input name="DOB" value={DOB} onChange={(e) =>{SetDOB(e.target.value)}} type="date" id="pass" placeholder="Date of Birth" required />
                                 </div>
                             </div>
                         </div>
@@ -117,7 +110,7 @@ const Register = ()=>{
                         <div id="flex_col">
                             <p>Email</p>
                             <div id="email_input_box">
-                                <input name="Email" value={Email} onChange={changeHandler} type="text" id="username" placeholder="Email" required />
+                                <input name="Email" value={Email} onChange={(e)=>{SetEmail(e.target.value)}} type="text" id="username" placeholder="Email" required />
                             </div>
                         </div>
                         
@@ -137,7 +130,7 @@ const Register = ()=>{
                 </div>
             </div>
         </div>
-    </body>
+    </div>
     </motion.div>
     );
 };

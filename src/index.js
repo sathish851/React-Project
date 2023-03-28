@@ -9,21 +9,34 @@ import Register from './pages/Register/register';
 import { Provider } from 'react-redux';
 import store from './Store/store';
 import Loading from './components/Loading/loading';
+import { persistStore } from 'redux-persist/lib';
+import { PersistGate } from 'redux-persist/es/integration/react'
+import CreateGroup from './pages/CreateGroup/createGroup';
+import JoinGroup from './pages/JoinGroup/joinGroup';
+import ProfileDetails from './pages/Profile_Details/ProfileDetails';
+import CreateTask from './pages/CreateTask/createTask';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+let persistor =persistStore(store);
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Loading/>} />
-          <Route path="/user/*" element={<App />} />    
-          <Route path="/login" element={ <Login /> } />
-          <Route path="/register" element={<Register />} />
-          
-        </Routes>
-      </BrowserRouter>
-    </React.StrictMode>
+      <PersistGate persistor={persistor}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Loading/>} />
+              <Route path="/user/*" element={<App />} />    
+              <Route path="/login" element={ <Login /> } />
+              <Route path="/register" element={<Register />} />
+              <Route path="/creategroup" element={<CreateGroup />} />
+              <Route path="/joingroup" element={<JoinGroup />} />
+              <Route path="/profiledetails" element={<ProfileDetails />} />
+              <Route path="/createtask" element={<CreateTask />} />
+              
+            </Routes>
+          </BrowserRouter>
+        </PersistGate>
+      </React.StrictMode>
   </Provider>
 );
 

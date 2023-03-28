@@ -1,10 +1,12 @@
 import './NavigationBar.css'
+import { useNavigate } from 'react-router-dom';
 
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../Store/slice';
+import ProfileDetails from '../../pages/Profile_Details/ProfileDetails';
 const NavigatinBar = ({children}) =>{
-
+    const navigate= useNavigate();
     const dispatch = useDispatch();
     const menuItem=[
         {
@@ -20,7 +22,7 @@ const NavigatinBar = ({children}) =>{
             name:"Tasks"
         },
         {
-            path:"/user/Notification",
+            path:"/user/notification",
             name:"Notification"
         },
         {
@@ -48,7 +50,8 @@ const NavigatinBar = ({children}) =>{
 
             <div className='logo_nav'>
                 <div>
-                    <button onClick={()=>dispatch(logout)}>logout</button>
+                    <button onClick={()=>dispatch(logout())}>logout</button>
+                    <button onClick={() => {navigate("/profiledetails")}}> Edit </button>
                     <select>
                         <option selected hidden></option>
                         <option >Edit</option>

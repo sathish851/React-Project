@@ -1,0 +1,46 @@
+.task-body{
+    height: 100vh;
+    width: 100%;
+    background: #15181D; 
+}
+
+.assigned-task-body{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 100px;
+    color: white;
+}
+
+.assigned-task-header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+
+.assigned-task-actions{
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    align-items: center;
+    gap: 20px;
+}
+
+.my-task-body{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 100px;
+    color: white;
+}
+
+
+.my-task-header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
