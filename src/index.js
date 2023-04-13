@@ -15,16 +15,24 @@ import CreateGroup from './pages/CreateGroup/createGroup';
 import JoinGroup from './pages/JoinGroup/joinGroup';
 import ProfileDetails from './pages/Profile_Details/ProfileDetails';
 import CreateTask from './pages/CreateTask/createTask';
-
+import { ToastContainer, toast } from 'react-toastify';
+import Home from './pages/Home/home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let persistor =persistStore(store);
 root.render(
   <Provider store={store}>
     <React.StrictMode>
+    
       <PersistGate persistor={persistor}>
+
           <BrowserRouter>
+          <ToastContainer 
+          position="bottom-right"
+          reverseOrder={false}
+          
+          />
             <Routes>
-              <Route path="/" element={<Loading/>} />
+              <Route path="/" element={<Home />} />
               <Route path="/user/*" element={<App />} />    
               <Route path="/login" element={ <Login /> } />
               <Route path="/register" element={<Register />} />
@@ -34,6 +42,7 @@ root.render(
               <Route path="/createtask" element={<CreateTask />} />
               
             </Routes>
+          
           </BrowserRouter>
         </PersistGate>
       </React.StrictMode>

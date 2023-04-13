@@ -25,7 +25,6 @@ const CreateTask = () =>{
         Axios.post("http://localhost:3050/api/group/mygroups",{
             user_id:user_id
         }).then((response)=>{
-            
             console.log(response.data)
             setOptions(response.data)
         })

@@ -28,10 +28,14 @@ const NavigatinBar = ({children}) =>{
         {
             path:"/user/notes",
             name:"Notes"
+        },
+        {
+            path:"/user/pomodoro",
+            name:"Pomodoro"
         }
     ]
     return(
-        <>
+        <div>
         <div className="header_bar">
             <div className='logo_navigationBar'>
             
@@ -59,13 +63,13 @@ const NavigatinBar = ({children}) =>{
                     </select>
                 </div>
                 <div className='logo_nav_img'>
-
+                        
                 </div>
             </div>
             
         </div>
         <main>{children}</main>
-        </>
+        </div>
         
     )
 }

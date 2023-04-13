@@ -1,7 +1,8 @@
 .header_bar{
-    height: 14%;
+    height: 100px;
     width: 100%;
     background-color: #1E2126;
+    
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -69,4 +70,9 @@ select{
     width: 52px;
     height: 60px;
     background-color: gray;
+}
+main{
+    overflow: auto;
+    height: calc(100vh - 100px);
+    width: 100%;
 }

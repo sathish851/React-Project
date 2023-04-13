@@ -1,15 +1,26 @@
 .task-body{
-    height: 100vh;
+    height: inherit;
     width: 100%;
     background: #15181D; 
+    overflow: auto;
 }
 
 .assigned-task-body{
+    
     width: 100%;
     padding-left: 80px;
     padding-right: 100px;
     color: white;
 }
+
+.assigned-task-body-content{
+    display: flex;
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+}
+
 
 .assigned-task-header{
     display: flex;
@@ -35,6 +46,13 @@
     color: white;
 }
 
+.my-task-body-content{
+    display: flex;
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+}
 
 .my-task-header{
     display: flex;
@@ -43,4 +61,64 @@
     justify-content: space-between;
     height: 100px;
     width: 100%;
+}
+
+.task-box{
+    box-sizing: border-box;
+    width: 520px;
+    height: 300px;
+    background: linear-gradient(288.81deg, #E4C96B -2.18%, #E2C662 -2.17%, rgba(232, 210, 131, 0.788485) 101.07%, rgba(239, 223, 166, 0.564177) 104.47%, rgba(247, 240, 212, 0.27086) 109.46%, rgba(255, 255, 255, 0.498996) 117.56%, rgba(255, 255, 255, 0) 117.57%);
+    border: 4px solid #000000;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.task-box-title{
+    width: inherit;
+    height: 78px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    display: flex;
+    color: #000000;
+    justify-content: center;
+}
+
+.task-flex-row{
+    display: flex;
+    width: inherit;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    padding: 25px;
+    padding-right: 50px;
+}
+.task-flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.task-details{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-details-text{
+        
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+  
+    color: #000000;
 }

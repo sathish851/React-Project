@@ -1,0 +1,47 @@
+.home-body{
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 0;
+    background: #15181D;
+    position: relative;
+}
+
+.home-bg{
+    
+    max-width: inherit;
+    max-height: 2134px;
+    width: inherit;
+    height: 2134px;
+}
+
+.home-text{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    border: none;
+
+    background: transparent;
+    color: #FFFFFF;
+}
+.home-text:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.home-text-login{
+    top: 50px;
+    right: 200px;
+}
+
+.home-text-signup{
+    top: 50px;
+    right: 80px;
+
+}
